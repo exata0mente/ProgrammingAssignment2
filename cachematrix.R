@@ -1,7 +1,8 @@
 ## Put comments here that give an overall description of what your
 ## functions do
+## Comments in portuguese
 
-## Write a short comment describing this function
+## Esta fun√ß√£o recebe uma matriz e armazena um cache referente ao seu inverso
 
 makeCacheMatrix <- function(x = matrix()) {
         
@@ -9,12 +10,12 @@ makeCacheMatrix <- function(x = matrix()) {
         
         setMatrixValue <- function(NewMatrix = matrix()){ ## Recebe novos valores para a matriz        
                 MatrixData <<- NewMatrix
-                MatrixInv <<- NULL ## Como s„o novos valores precisaremos "resetar" o cache
+                MatrixInv <<- NULL ## Como s√£o novos valores precisaremos "resetar" o cache
         } 
         getMatrixValue <- function() MatrixData ## Define o valor da matriz
         
         
-        setMatrixInv <- function(Inverso){ ## Recebe o inverso da matriz e armazena o Inverso recebido porpar‚metro ‡ vari·vel MatrixInv
+        setMatrixInv <- function(Inverso){ ## Recebe o inverso da matriz e armazena o Inverso recebido porpar√¢metro √† vari√°vel MatrixInv
                 MatrixInv <<- Inverso        
         }                                   
         
@@ -29,14 +30,14 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## Esta fun√ß√£o val√≠da se j√° existe um cache da Matriz enviada e imprime. Caso n√£o tenha, calcula e imprime tamb√©m.
 
 cacheSolve <- function(NewMatrix, ...) {
         MatrixInv <- NewMatrix$getInv() ## Recebe o valor do inverso da Matriz
-        if(!is.null(MatrixInv)){ ## Caso j· exista o valor em cache ...
+        if(!is.null(MatrixInv)){ ## Caso j√° exista o valor em cache ...
                 
-                message("Inverso da Matriz j· est· armazenado")
-                return(MatrixInv) ## O valor È impresso na tela.
+                message("Inverso da Matriz j√° est√° armazenado")
+                return(MatrixInv) ## O valor √© impresso na tela.
         }
         
         MatrixData <- NewMatrix$get() ## Recebe os valores "bruto" da matriz
@@ -44,5 +45,5 @@ cacheSolve <- function(NewMatrix, ...) {
         
         NewMatrix$setInv(MatrixInv)## "Envia" ao cache o valor calculado
         
-        MatrixInv                           ## Devolve ao usu·rio o inverso da
+        MatrixInv                           ## Devolve ao usu√°rio o inverso da
 }
